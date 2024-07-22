@@ -940,14 +940,14 @@ class FunCapHook(DBG_Hooks):
         '''
         Return next instruction to ea
         '''
-        end = get_inf_structure().get_maxEA()
+        end = get_inf_structure().max_ea
         return next_head(ea, end)
 
     def prev_ins(self, ea):
         '''
         Return previous instruction to ea
         '''
-        start = get_inf_structure().get_minEA()
+        start = get_inf_structure().min_ea
         return idc.prev_head(ea, start)
 
     # handlers called from within debug hooks
